@@ -2,8 +2,12 @@ Rails.application.routes.draw do
  # get 'tareas/index'
   get 'tareas', to: 'tareas#index'
   get 'tareas/new', to: 'tareas#new'
+  delete 'tareas', to: 'tareas#destroy'
   get 'tareas/:id', to: 'tareas#show'
   #post 'tareas/create'
+  get 'tareas/:id/edit', to: 'tareas#edit'
+ 
+  put 'tareas/:id', to: 'tareas#update'
   post 'tareas', to: 'tareas#create'
   
   get 'bienvenido/index'
