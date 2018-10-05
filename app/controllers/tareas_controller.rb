@@ -48,6 +48,7 @@ class TareasController < ApplicationController
     else
       render :new
     end
+    
 
-
+  end
 end
