@@ -1,2 +1,26 @@
 <h1>Editar Tarea </h1>
+<<<<<<< HEAD
 <%= render "formulario", boton: "Editar", color_boton: "warning" %>
+=======
+<%= @tarea.errors.full_messages.each do |mensaje| %>
+    <div class="alert alert-danger" role="alert>
+    <% = mensaje %>
+    </div>
+<% end %>
+
+<%= form_for(@tarea) do |f|%>
+    <div class="form-group">
+    <label>Editar</label>
+    <%=f.text_field :titulo, class: "form-control", :required => true %>
+       
+  <!--  <input type="text" name="titulo" class="form-control"> -->
+    </div>
+<div class="form-group">
+    <label>Descripcion</label>
+    <%=f.text_area :descripcion, class: "form-control",:required => true %>
+    </div>
+    <div class="form-group">
+    <%= f.submit "Editar" , class: "btn btn-warning" %>
+    </div>
+    <% end %>
+>>>>>>> 1b4e8559b8c8e59e0846332257cae819022427aa
