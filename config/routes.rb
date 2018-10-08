@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+ devise_for :usuarios
  resources :tareas
  
   # get 'tareas/index'
@@ -12,18 +12,6 @@ Rails.application.routes.draw do
  
   #put 'tareas/:id', to: 'tareas#update'
   #post 'tareas', to: 'tareas#create'
-=======
- # get 'tareas/index'
-  get 'tareas', to: 'tareas#index'
-  get 'tareas/new', to: 'tareas#new'
-  delete 'tareas', to: 'tareas#destroy'
-  get 'tareas/:id', to: 'tareas#show'
-  #post 'tareas/create'
-  get 'tareas:/:id', to: 'tareas#edit'
- 
-  put 'tareas/id:', to: 'tareas#update'
-  post 'tareas', to: 'tareas#create'
->>>>>>> 1b4e8559b8c8e59e0846332257cae819022427aa
   
   get 'bienvenido/index'
 

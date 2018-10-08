@@ -1,11 +1,7 @@
 <h1>Mis Tareas </h1>
 
 <table class="table table-hover">
-<<<<<<< HEAD
     <thead class="thead-dark">
-=======
-    <thead>
->>>>>>> 1b4e8559b8c8e59e0846332257cae819022427aa
         <th>Tarea</th>
         <th>Editar</th>
        <th>Eliminar</th>
@@ -13,18 +9,12 @@
  <% @tareas.each do |tarea| %>
 
     <tr>
-<<<<<<< HEAD
     <td> <%= link_to  tarea.titulo, tarea  %></td>
     <!--#{controller: "tareas", action: "show", id: tarea.id}-->
     <td><%=link_to "Editar", edit_tarea_path(tarea), class: "btn btn-warning" %></td>
     <!-- {controller: "tareas", action: "edit", id: tarea.id} -->
     <td><%= link_to  "Eliminar", tarea , method: "delete" , data: {confirm:"estas seguro?"}, class:"btn btn-danger" %> </td>
     <!-- {controller: "tareas", action: "destroy", id: tarea.id}  -->
-=======
-    <td> <%= link_to tarea.titulo, {controller:"tareas", action:"show", id: tarea.id}  %></td>
-    <td><button class="btn btn-warning">Editar</button></td>
-    <td><%= link_to  "Eliminar", {controller:"tareas", action:"destroy", id: tarea.id}, method:"delete" , data: {confirm:"estas seguro?"}, class:"btn btn-danger" %> </td>
->>>>>>> 1b4e8559b8c8e59e0846332257cae819022427aa
     </tr>
 
 

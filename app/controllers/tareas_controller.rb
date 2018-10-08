@@ -1,4 +1,5 @@
 class TareasController < ApplicationController
+ before_action :authenticate_usuario!, except: [:index,:show, :update] 
  before_action :set_tarea, except: [:index,:new,:create]
   def index
     @tareas = Tarea.all 
@@ -6,11 +7,7 @@ class TareasController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
     
-=======
-    @tarea = Tarea.find(params[:id])
->>>>>>> 1b4e8559b8c8e59e0846332257cae819022427aa
    # redirect_to controller: "tareas" , action: "show"
        #select * from tareas where id=
   end
@@ -21,15 +18,11 @@ class TareasController < ApplicationController
 
   def create
     @tarea = Tarea.new(tarea_params)
-    
+    @tarea.usuario = current_usuario
   if  @tarea.save
     #insert into tareas
-<<<<<<< HEAD
     redirect_to @tarea # action show
     #controller: 'tareas', action: 'show' , id: @tarea.id 
-=======
-    redirect_to controller: 'tareas', action: 'show' , id: @tarea.id 
->>>>>>> 1b4e8559b8c8e59e0846332257cae819022427aa
   else
     render :new
    end
@@ -40,7 +33,6 @@ class TareasController < ApplicationController
  
 
   def destroy
-<<<<<<< HEAD
     
     @tarea.destroy
     redirect_to tareas_path
@@ -61,6 +53,7 @@ class TareasController < ApplicationController
       render :new
     end
   end
+  
   private
   def set_tarea
     @tarea = Tarea.find(params[:id])
@@ -68,27 +61,6 @@ class TareasController < ApplicationController
 
   def tarea_params
     params.require(:tarea).permit(:titulo,:descripcion)
-=======
-    @tarea = Tarea.find(params[:id])
-    @tarea.destroy
-    redirect_to controller: "tareas" , action: "index"
-  end
-
-  def edit
-    @tarea = Tarea.find(params[:id])
-    redirect_to controller: "tareas" , action: "edit"
-  end
-
-  def update
-    @tarea = Tarea.find(params[:id])
-    if @tarea.update(titulo: params[:tarea][:titulo],
-      descripcion: params[:tarea][:descripcion])
-      redirect_to @tarea
-    else
-      render :new
-    end
-    
->>>>>>> 1b4e8559b8c8e59e0846332257cae819022427aa
 
   end
 end

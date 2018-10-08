@@ -1,12 +1,14 @@
 <div class="card">
     <div class="card-body">
         <div class="card-title">
-   <h2> <%= @tarea.titulo %></h2>
-   </div>
-    
-     <div class= "card-body">
-      <p><%= @tarea.descripcion %></p>
+         <h2> <%= @tarea.titulo %></h2>
+        </div>
+        <div class= "card-body">
+         <p><%= @tarea.descripcion %></p>
+         </div>
     </div>
 </div>
-</div>
- </div>
+<% unless @tarea.usuario.nil? %>
+<p>Escrito por: <%= @tarea.usuario.email %></p>
+<% end %>
+ 
