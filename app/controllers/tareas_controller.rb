@@ -7,7 +7,7 @@ class TareasController < ApplicationController
   end
 
   def show
-    
+    @comentario = Comentario.new
    # redirect_to controller: "tareas" , action: "show"
        #select * from tareas where id=
   end

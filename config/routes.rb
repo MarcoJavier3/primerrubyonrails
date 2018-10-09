@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
- devise_for :usuarios
- resources :tareas
+  resources :comentarios
+ devise_for :usuarios 
+ resources :tareas do
+  resources :comentarios
+ end
  
   # get 'tareas/index'
   #get 'tareas', to: 'tareas#index'
